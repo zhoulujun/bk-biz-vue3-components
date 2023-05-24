@@ -1,5 +1,6 @@
-import { defineComponent } from 'vue';
+import { defineComponent, PropType } from 'vue';
 import { Loading } from 'bkui-vue';
+
 export default defineComponent({
   name: 'LoadingPlaceholder',
   props: {
@@ -8,14 +9,14 @@ export default defineComponent({
       default: '',
     },
     size: {
-      type: String,
+      type: String as PropType<'small' | 'large' | 'mini'>,
       default: 'small',
     },
   },
   render() {
     return (
       <div class="full-width full-height flex-row align-items-center justify-content-center text-center">
-        <Loading size={this.size} title={this.title} />
+        <Loading size={this.size} title={this.title}/>
       </div>
     );
   },

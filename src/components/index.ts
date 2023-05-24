@@ -1,5 +1,5 @@
 import CollapseLeft from './collapse-left';
-import { withInstall } from 'bkui-vue/lib/shared';
+// import { withInstall } from 'bkui-vue/lib/shared';
 import CustomSwitch from './custom-switch';
 import ExpandBar from './expand-bar';
 import Footer from './footer';
