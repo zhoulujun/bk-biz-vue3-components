@@ -1,0 +1,24 @@
+.cursor-not-allow {
+  cursor: not-allowed;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.point-event-none {
+  pointer-events: none;
+}
+
+.permission-disabled {
+  &,
+  & a,
+  .bk-dropdown-item {
+    color: #ccc;
+    cursor: not-allowed;
+  }
+
+  .bk-dropdown-item {
+    pointer-events: none;
+  }
+}

@@ -1,0 +1,55 @@
+import { Button } from 'bkui-vue';
+
+
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import StickyBottom from '../components/sticky-bottom';
+
+<Meta
+  title="Example/StickyBottom"
+  argTypes={{
+    isFixed: {
+      type: { name: 'boolean', required: false },
+      defaultValue: false,
+      control: 'boolean',
+    },
+    paddingLeft: {
+      type: { name: 'number', required: false },
+      defaultValue: 60,
+      control: 'number',
+    },
+    to: {
+      description: '插入元素',
+      defaultValue: 'body',
+      control: 'text',
+    },
+  }}
+  component={StickyBottom}
+/>
+
+export const Template = (args) => ({
+  components: { StickyBottom, Button },
+  setup() {
+    return { args };
+  },
+  template: '<div style="height: 300px;position: relative;overflow: auto;border: 1px solid #ccc;"><div ' +
+    'style="height: 100%;overflow: auto;">父容器高度600<div ' +
+    'style="height:1500px;' +
+    '">高度1500填充</div><StickyBottom ' +
+    'v-bind="args" ' +
+    '><Button  ' +
+    'class="mr-min" ' +
+    'theme="primary">下一步</Button></StickyBottom></div><div>',
+});
+
+# StickyBottom
+
+吸底，表单提交按钮，自动吸底。
+
+<Story
+  name="Primary"
+  args={{
+    paddingLeft: 120,
+  }}>
+  {Template.bind({})}
+</Story>

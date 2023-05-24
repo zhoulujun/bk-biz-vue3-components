@@ -1,0 +1,109 @@
+@import 'variables/theme/default';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+  &:focus {
+    outline: none;
+  }
+
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+    background-color: $color-scrollbar;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: $color-scrollbar-thumb-hover;
+  }
+
+  ::-webkit-scrollbar-track {
+    border-radius: 4px;
+    background-color: $color-scrollbar;
+  }
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  overflow: auto;
+  font: 400 14px/1.5 'Microsoft YaHei', 'Hiragino Sans GB', Tahoma, SimHei, sans-serif;
+  color: #63656e;
+  background: #fff;
+  min-width: 1280px;
+  scroll-behavior: smooth;
+  position: relative;
+}
+
+.bv-table {
+  &-box {
+    width: 100%;
+    border: 1px solid #dcdee5;
+    border-radius: 2px;
+    border-collapse: collapse;
+    table-layout: fixed;
+
+    thead {
+      background: #fafbfd;
+      position: sticky;
+      top: 0; /* 第一列最上 */
+    }
+
+    td,
+    th {
+      height: 40px;
+      border: 1px solid #dcdee5;
+      padding: 0 12px;
+    }
+
+    input {
+      border: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .bv-td-operation {
+      color: #c4c6cc;
+
+      .icon-subtract {
+        &:hover {
+          color: #ea3636;
+        }
+      }
+    }
+  }
+
+  &-row-border {
+    td,
+    th {
+      border-width: 1px 0;
+    }
+  }
+
+  &-ellipsis {
+    td,
+    th {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}
+
+.border-none {
+  /* stylelint-disable-next-line declaration-no-important */
+  border-width: 0 !important;
+}

@@ -1,0 +1,44 @@
+import { Button } from 'bkui-vue';
+
+
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import UnitSelect from '../components/unit-select';
+
+<Meta
+  title="Example/UnitSelect"
+  argTypes={{
+    modelValue: {
+      type: { name: 'object', required: true },
+      defaultValue: {
+        choice: ['Misc', 'short'],
+        custom: '',
+      },
+      control: 'object',
+    },
+  }}
+  component={UnitSelect}
+/>
+
+export const Template = (args) => ({
+  components: { UnitSelect },
+  setup() {
+    return { args };
+  },
+  template: '<UnitSelect v-bind="args" />',
+});
+
+# UnitSelect
+
+默认使用
+
+<Story
+  name="Primary"
+  args={{
+    modelValue: '',
+  }}>
+  {Template.bind({})}
+</Story>
+
+
+

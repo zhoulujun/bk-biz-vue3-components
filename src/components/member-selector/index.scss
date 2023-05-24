@@ -1,0 +1,27 @@
+.option-wrapper {
+  display: flex;
+  justify-content: space-between;
+
+  .avatar-and-engligh-name {
+    display: flex;
+  }
+
+  .chinese-name {
+    font-size: 13px;
+    color: #999;
+  }
+}
+
+.avatar-box {
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+  overflow: hidden;
+  border: 2px solid #ccc;
+}
+
+.bk-selector-node.bk-selector-member {
+  .text {
+    color: #999;
+  }
+}

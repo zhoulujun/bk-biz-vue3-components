@@ -1,0 +1,23 @@
+{
+  "name": "bk-member-selector",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "dependencies": {
+    "bkui-vue": "^0.0.1-beta.420",
+    "classnames": "^2.3.2",
+    "vue": "^3.2.47"
+  },
+  "peerDependencies": {
+    "bkui-vue": "^0.0.1-beta.420",
+    "classnames": "^2.3.2",
+    "vue": "^3.2.47"
+  }
+}

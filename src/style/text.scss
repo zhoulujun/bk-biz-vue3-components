@@ -1,0 +1,94 @@
+@import "@/style/variables.scss";
+
+.font-large {
+  font-size: $font-size-large;
+}
+
+.font-big {
+  font-size: $font-size-big;
+}
+
+.font-medium {
+  font-size: $font-size-medium;
+}
+
+.font-normal {
+  font-size: $font-size-normal;
+}
+
+.font-small {
+  font-size: $font-size-small;
+}
+
+.font-mini {
+  font-size: $font-size-mini;
+}
+
+.font-bold {
+  font-weight: bold;
+}
+
+.line-height1 {
+  line-height: 1;
+}
+
+.text-ov {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.nowrap {
+  white-space: nowrap;
+  word-break: keep-all;
+}
+
+.text-success {
+  color: #2dcb56;
+}
+
+.text-danger {
+  color: #ea3636;
+}
+
+.text-gray {
+  color: #999;
+}
+
+.disabled-text {
+  cursor: not-allowed;
+
+  /* stylelint-disable-next-line declaration-no-important */
+  color: #dcdee5 !important;
+}
+
+.text-lint-btn {
+  cursor: pointer;
+
+  &:hover {
+    /* stylelint-disable-next-line declaration-no-important */
+    color: #3a84ff !important;
+  }
+}
+
+.text-decoration-dashed {
+  padding-bottom: 2px;
+  border-bottom: 1px dashed #979ba5;
+}
+
+.text-link {
+  color: #3a84ff;
+  cursor: pointer;
+}
