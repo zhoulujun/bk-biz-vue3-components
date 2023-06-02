@@ -3943,10 +3943,10 @@ binary-extensions@^2.0.0:
   resolved "https://registry.npmjs.org/binary-extensions/-/binary-extensions-2.2.0.tgz"
   integrity sha512-jDctJ/IVQbZoJykoeHbhXpOlNBqGNcwXJKJog42E5HDPUwQTSdjCHdihjj0DlnheQ7blbT6dHOafNAiS8ooQKA==
 
-bkui-vue@^0.0.1-beta.420:
-  version "0.0.1-beta.420"
-  resolved "https://registry.npmjs.org/bkui-vue/-/bkui-vue-0.0.1-beta.420.tgz"
-  integrity sha512-T4GH+kIUH5llNMJVmLskCYVTjM+0eFjH9yeqQHXeIufDvfM5yVovRi5aORQ2KnRzEgBXXU+XZ06Hu9dUFoeYhA==
+bkui-vue@^0.0.1-beta.421:
+  version "0.0.1-beta.421"
+  resolved "https://registry.npmjs.org/bkui-vue/-/bkui-vue-0.0.1-beta.421.tgz"
+  integrity sha512-pAObmLPU5W/t9Mzc7WRFW4h76R4VfUUswy3/Opq2lXiJPdqSCadHtpVl9FS9GrgzMyX35X2fhKQ7oTiwAvut6Q==
   dependencies:
     "@floating-ui/dom" "~0.5.2"
     "@popperjs/core" "~2.11.5"
