@@ -12,13 +12,12 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
-    "bkui-vue": "^0.0.1-beta.420",
+    "bkui-vue": "^0.0.1-beta.421",
     "classnames": "^2.3.2",
     "dayjs": "^1.11.7",
     "vue": "^3.2.47"
   },
   "peerDependencies": {
-    "bkui-vue": "^0.0.1-beta.420",
     "classnames": "^2.3.2",
     "dayjs": "^1.11.7",
     "vue": "^3.2.47"

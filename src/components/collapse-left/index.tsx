@@ -1,4 +1,4 @@
-import { defineComponent, PropType, VNode, ref } from 'vue';
+import { defineComponent, PropType, ref, VNode } from 'vue';
 import { Collapse } from 'bkui-vue';
 import { DownShape, UpShape } from 'bkui-vue/lib/icon';
 
@@ -11,7 +11,7 @@ export default defineComponent({
       default: false,
     },
     content: {
-      type: String || Object as PropType<VNode>,
+      type: String || Object as PropType<VNode> || Function,
     },
     title: {
       type: String || Object as PropType<VNode>,
@@ -35,9 +35,9 @@ export default defineComponent({
             </div>
           ),
           content: () => {
-            if(props.content){
-              if(typeof props.content==='function'){
-                return  props.content()
+            if (props.content) {
+              if (typeof props.content === 'function') {
+                return props.content();
               }
               return props.content;
             }
