@@ -1,6 +1,6 @@
 import { Message, TagInput } from 'bkui-vue';
 import './index.scss';
-import { computed, defineComponent, PropType, ref, shallowRef } from 'vue';
+import { computed, defineComponent, PropType, ref, shallowRef, VNode } from 'vue';
 
 export default defineComponent({
   name: 'MemberSelector',
@@ -38,7 +38,7 @@ export default defineComponent({
       default: '请输入用户名',
     },
     trigger: {
-      type: String,
+      type: String as PropType<'focus' | 'search'>,
       default: 'search',
     },
     value: {
@@ -68,12 +68,10 @@ export default defineComponent({
       default: '',
     },
     tpl: {
-      type: Function,
-      default: null,
+      type: Function as PropType<(node: any, h: Function, ctx: VNode) => VNode>,
     },
     tagTpl: {
-      type: Function,
-      default: null,
+      type: Function as PropType<(node: any, highlightKeyword: Function, h: Function, ctx: VNode) => VNode>,
     },
   },
   emits: ['update:modelValue', 'change'],

@@ -164,20 +164,36 @@ export const Primary: StoryFn<typeof MemberSelector> = (args) => ({
 //👇 Each story then reuses that template
 export const Placeholder = Primary.bind({});
 Placeholder.args = {
+  api: 'https://www.zhoulujun.cn/test/jsonp.js?a=3',
   placeholder: '请输入收件人RTX或邮件组名称',
+};
+Primary.parameters = {
+  docs: {
+    description: {
+      component: '用户选择器',
+    },
+  },
 };
 
 export const 下拉列表尺寸设置 = Primary.bind({});
 下拉列表尺寸设置.args = {
+  api: 'https://www.zhoulujun.cn/test/jsonp.js?a=3',
   contentMaxHeight: 500,
   contentWidth: 600,
 };
-
+下拉列表尺寸设置.parameters = {
+  docs: {
+    description: {
+      component: '用户选择器',
+    },
+  },
+};
 //👇 Each story then reuses that template
 export const 标签模板 = Primary.bind({});
 标签模板.args = {
   placeholder: '请输入收件人RTX或邮件组名称',
-  avatars: (node: { url: string }) => node.url,
+  api: 'https://www.zhoulujun.cn/test/jsonp.js?a=3',
+  avatars: (node: { url: string }) => 'https://www.tencent.com/data/logo-pic/1.2.png',
   tagTpl: ({ chinese_name, english_name, city }: { chinese_name: string, english_name: string, city: string }) => (
     <div class="tag">
       <span class="text"><label
@@ -188,23 +204,9 @@ export const 标签模板 = Primary.bind({});
 
 export const 列表模板 = Primary.bind({});
 列表模板.args = {
+  api: 'https://www.zhoulujun.cn/test/jsonp.js?a=3',
   placeholder: '请输入收件人RTX或邮件组名称',
   avatars: (node: { url: string }) => node.url,
-  tagTpl: ({ chinese_name, english_name, city }: {
-    chinese_name: string,
-    english_name: string,
-    city: string
-  }, highlightKeyword: any,) => (
-    <div class="flex-row align-items-center p-min">
-      <img
-        class="avatar-box overflow-hidden mr-min"
-        src={node.src}
-        alt={'人员头像'}/>
-      <div
-        class="text flex-1 text-ov"
-        v-html={`${highlightKeyword(english_name)} (${chinese_name}):${city}`}></div>
-    </div>
-  ),
   tagTpl: ({ chinese_name, english_name, city }: { chinese_name: string, english_name: string, city: string }) => (
     <div class="tag">
       <span class="text"><label
@@ -212,5 +214,6 @@ export const 列表模板 = Primary.bind({});
     </div>
   )
 };
+
 
 
