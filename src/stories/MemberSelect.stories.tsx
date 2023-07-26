@@ -4,13 +4,6 @@ import { ref } from 'vue';
 
 export default {
   title: 'Example/MemberSelector',
-  parameters: {
-    docs: {
-      description: {
-        component: '用户选择器',
-      }
-    }
-  },
   component: MemberSelector,
   argTypes: {
     modelValue: {
@@ -19,6 +12,14 @@ export default {
       table: {
         category: '值',
         defaultValue: []
+      }
+    },
+    allowCreate: {
+      control: 'boolean',
+      description: '是否允许创建',
+      table: {
+        category: '值',
+        defaultValue: true
       }
     },
     optionLimit: {
@@ -31,7 +32,7 @@ export default {
     },
     contentWidth: {
       control: 'number',
-      description: '最多可选个数',
+      description: '自定义设置下拉弹框的宽度，单选会撑满因此失效',
       table: {
         category: '限制',
         defaultValue: 200
@@ -39,7 +40,7 @@ export default {
     },
     contentMaxHeight: {
       control: 'number',
-      description: '最多可选个数',
+      description: '自定义设置下拉弹框的长度',
       table: {
         category: '限制',
         defaultValue: 300
@@ -58,7 +59,7 @@ export default {
     },
     maxData: {
       control: 'number',
-      description: '下拉列表搜索结果显示个数，默认为 10',
+      description: '下拉列表搜索结果显示个数，默认为 10，-1为不限制。',
       table: {
         category: '限制',
         defaultValue: -1
@@ -74,6 +75,7 @@ export default {
     },
     placeholder: {
       control: 'text',
+      description: '空数据时显示的提示文案',
       table: {
         category: '外观',
         defaultValue: '请输入用户名'
@@ -81,6 +83,7 @@ export default {
     },
     trigger: {
       control: 'text',
+      description: '搜索列表触发展示方式，默认是输入关键字搜索时展示，也可以获取焦点是展示（用在数据量少的时候）',
       table: {
         category: '外观',
         defaultValue: 'search'
@@ -88,6 +91,7 @@ export default {
     },
     label: {
       control: 'text',
+      description: '展示字段的 key 值',
       table: {
         category: '值',
         defaultValue: 'chinese_name'
@@ -95,6 +99,7 @@ export default {
     },
     value: {
       control: 'text',
+      description: '保存字段的 key 值',
       table: {
         category: '值',
         defaultValue: 'english_name'
@@ -108,7 +113,7 @@ export default {
     },
 
     api: {
-      description: '用户列表获取接口',
+      description: '用户列表获取接口,可以为函数',
       table: {
         category: '请求',
         defaultValue: (node: { src: string }) => node.src
@@ -172,6 +177,10 @@ Primary.parameters = {
     description: {
       component: '用户选择器',
     },
+    source: {
+      code: '222',
+      language: 'tsx'
+    }
   },
 };
 
@@ -186,6 +195,9 @@ export const 下拉列表尺寸设置 = Primary.bind({});
     description: {
       component: '用户选择器',
     },
+    source: {
+      code: '222'
+    }
   },
 };
 //👇 Each story then reuses that template

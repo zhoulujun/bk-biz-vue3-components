@@ -5,30 +5,51 @@ import { computed, defineComponent, PropType, ref, shallowRef, VNode } from 'vue
 export default defineComponent({
   name: 'MemberSelector',
   props: {
+    /**
+     * 选项限制
+     */
     optionLimit: {
       type: Number,
       default: 15,
     },
+    /**
+     * 输入框尺寸大小
+     */
     size: {
       type: String as PropType<'mini' | 'small' | 'large'>,
       default: null,
     },
+    /**
+     * 是否允许创建
+     */
     allowCreate: {
       type: Boolean,
       default: true,
     },
+    /**
+     * 列表最多展示可选个数，-1为不限制
+     */
     maxData: {
       type: Number,
       default: -1,
     },
+    /**
+     * 缓存时间
+     */
     cacheTimeout: {
       type: Number,
       default: 1000 * 60 * 60 * 24,
     },
+    /**
+     * 下拉列表宽度
+     */
     contentWidth: {
       type: Number,
       default: 200,
     },
+    /**
+     * 下拉列表最大高度
+     */
     contentMaxHeight: {
       type: Number,
       default: 300,
@@ -37,18 +58,30 @@ export default defineComponent({
       type: String,
       default: '请输入用户名',
     },
+    /**
+     * 输入框选择框触发方式
+     */
     trigger: {
       type: String as PropType<'focus' | 'search'>,
       default: 'search',
     },
+    /**
+     * 人员选择器，value对应的字段
+     */
     value: {
       type: String,
       default: 'english_name',
     },
+    /**
+     * 人员选择器，label对应的字段
+     */
     label: {
       type: String,
       default: 'chinese_name',
     },
+    /**
+     * 是否使用分组
+     */
     useGroup: Boolean,
     cacheable: Boolean,
     extraGroup: {
@@ -63,13 +96,22 @@ export default defineComponent({
       type: Function,
       default: (node: any) => node.src,
     },
+    /**
+     * ajax请求接口，可以自定义函数
+     */
     api: {
       type: String || Function,
       default: '',
     },
+    /**
+     * 自定义下拉列表模板
+     */
     tpl: {
       type: Function as PropType<(node: any, h: Function, ctx: VNode) => VNode>,
     },
+    /**
+     * 自定义标签模板
+     */
     tagTpl: {
       type: Function as PropType<(node: any, highlightKeyword: Function, h: Function, ctx: VNode) => VNode>,
     },

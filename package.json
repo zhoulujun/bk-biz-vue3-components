@@ -25,6 +25,7 @@
   "devDependencies": {
     "@blueking/eslint-config-bk": "^2.1.0-beta.12",
     "@blueking/stylelint-config-bk": "^2.1.0-beta.10",
+    "@storybook/addon-docs": "^7.1.1",
     "@storybook/addon-essentials": "^7.0.17",
     "@storybook/addon-interactions": "^7.0.17",
     "@storybook/addon-links": "^7.0.17",
