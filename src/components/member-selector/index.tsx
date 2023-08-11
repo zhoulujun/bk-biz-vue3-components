@@ -129,8 +129,8 @@ export default defineComponent({
       if (props.useGroup) {
         return props.extraGroup.concat([
           {
-            english_name: '成员',
-            chinese_name: '成员',
+            [props.label]: '成员',
+            [props.value]: '成员',
             children: memberList.value,
           },
         ]);
@@ -165,22 +165,32 @@ export default defineComponent({
         script.src = `${api}?callback=${callback}`;
       }
       document.body.appendChild(script);
+      /**
+       *  处理后台请求数据
+       * @param res
+       */
+      function formatData(res: any) {
+        if (!res) {
+          return null;
+        }
+        if (typeof props.callback === 'function') {
+          return props.callback(res);
+        }
+        if (!res.result) {
+          Message({ theme: 'error', message: res.message || '请求失败' });
+          return null;
+        }
+        return res.data;
+      }
       // @ts-ignore
       window[callback] = (res: any) => {
-        if (res.result) {
-          loading.value = false;
-          if(typeof props.callback === 'function') {
-            memberList.value = props.callback(res.data);
-          }else {
-            memberList.value = res.data;
-          }
-        } else {
-          Message({ theme: 'error', message: res.message });
-        }
+        const data = formatData(res) || [];
+        memberList.value = data;
+        loading.value = false;
         if (props.cacheable) {
           const cache = {
             timestamp: new Date().valueOf(),
-            data: res.data,
+            data,
           };
           localStorage.setItem('member', JSON.stringify(cache));
         }
@@ -214,7 +224,8 @@ export default defineComponent({
     );
     const tagTpl = (node: any) => (
       <div class="tag">
-        <span class="text"><label style="text-decoration: underline;">{node[this.value]}</label> ({node[this.label]})</span>
+        <span class="text"><label
+          style="text-decoration: underline;">{node[this.value]}</label> ({node[this.label]})</span>
       </div>
     );
     return (

@@ -120,7 +120,7 @@ export default {
       }
     },
     callback:{
-      description: '用请求列表，数据处理函数。默认是api返回数据直接给到选择列表。如果传入 callback 函数，callback(respond) 函数的返回值会作为选择列表的数据。',
+      description: '用请求列表，数据处理函数。默认是api返回数据respond.data直接给到选择列表。如果传入 callback 函数，callback(respond) 函数的返回值会作为选择列表的数据。',
       table: {
         category: '请求',
         defaultValue: null
