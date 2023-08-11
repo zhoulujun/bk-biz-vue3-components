@@ -104,6 +104,10 @@ export default defineComponent({
       default: '',
     },
     /**
+     * api 请求参数后的回调函数
+     */
+    callback: Function,
+    /**
      * 自定义下拉列表模板
      */
     tpl: {
@@ -165,7 +169,11 @@ export default defineComponent({
       window[callback] = (res: any) => {
         if (res.result) {
           loading.value = false;
-          memberList.value = res.data;
+          if(typeof props.callback === 'function') {
+            memberList.value = props.callback(res.data);
+          }else {
+            memberList.value = res.data;
+          }
         } else {
           Message({ theme: 'error', message: res.message });
         }
@@ -206,8 +214,7 @@ export default defineComponent({
     );
     const tagTpl = (node: any) => (
       <div class="tag">
-        <span class="text"><label
-          style="text-decoration: underline;">{node[this.value]}</label> ({node[this.label]})</span>
+        <span class="text"><label style="text-decoration: underline;">{node[this.value]}</label> ({node[this.label]})</span>
       </div>
     );
     return (

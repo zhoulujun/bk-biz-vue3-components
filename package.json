@@ -5,14 +5,14 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc --noEmit && vite build",
+    "build": "vue-tsc --noEmit --skipLibCheck && vite build",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build:lib": "vue-tsc --noEmit && vite build --config ./build/lib.config.ts",
     "build-storybook": "storybook build"
   },
   "dependencies": {
-    "bkui-vue": "^0.0.1-beta.458",
+    "bkui-vue": "^0.0.1",
     "classnames": "^2.3.2",
     "dayjs": "^1.11.7",
     "vue": "^3.2.47"
@@ -44,7 +44,7 @@
     "sass": "^1.62.1",
     "sass-loader": "^13.2.2",
     "storybook": "^7.1.1",
-    "typescript": "^5.0.2",
+    "typescript": "^4.9.5",
     "vite": "^4.3.2",
     "vite-plugin-dts": "^2.3.0",
     "vue-tsc": "^1.4.2"
