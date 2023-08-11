@@ -19,6 +19,7 @@
     "strict": true,
     "jsx": "preserve",
     "esModuleInterop": true,
+    "skipLibCheck": true,
     /* 允许编译生成文件时，在代码中注入工具类(__importDefault、__importStar)对ESM与commonjs混用情况做兼容处理*/
     "lib": [
       /* 编译过程中需要引入的库文件列表*/
@@ -41,7 +42,6 @@
     },
     "types": [
       "node",
-      "bkui-vue/lib/index.d.ts",
     ]
   },
   "include": [
